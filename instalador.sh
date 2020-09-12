@@ -2,8 +2,6 @@
 killall tocGame
 killall lanzadera.sh
 echo sa | sudo rm -rf /home/hit/tocGame/ /home/hit/updater/ /home/hit/clearOne/ /home/hit/instaladorBeta.* /home/hit/instalador.* /home/hit/instaladorMaestro /home/hit/tocGameFunciona/ /home/hit/tocGameTemporal/ /home/hit/tocGameScripts/
-cd ~
-wget http://silema.hiterp.com/instalador/instalador.zip
 sudo dpkg --add-architecture i386
 sudo apt update -y
 sudo apt upgrade -y
@@ -16,7 +14,7 @@ sudo apt install git -y
 sudo npm install -g npx -y
 
 cd ~
-wget -q http://web.hiterp.com/tocGame/instalador.zip -P ~/
+wget -q http://web.hiterp.com/instalador/instalador.zip -P ~/
 unzip instalador.zip -d /home/hit/instaladorMaestro
 
 cd instaladorMaestro
