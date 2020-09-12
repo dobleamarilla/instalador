@@ -1,6 +1,9 @@
 #!/bin/bash
+echo "puton"
 echo sa | sudo killall tocGame
+echo "lolaso"
 killall lanzadera.sh
+echo "jiji"
 sudo rm -rf /home/hit/tocGame/ /home/hit/updater/ /home/hit/clearOne/ /home/hit/instaladorBeta.* /home/hit/instalador.zip.* /home/hit/instalador.zip /home/hit/instaladorMaestro /home/hit/tocGameFunciona/ /home/hit/tocGameTemporal/ /home/hit/tocGameScripts/
 sudo dpkg --add-architecture i386
 sudo apt update -y
