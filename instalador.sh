@@ -60,4 +60,4 @@ echo 2929292929
 sudo chmod a+x ~/clearOne/kil_sema.sh
 echo 3030303030
 sh ~/updater/tocGameUpdater.sh
-echo 3131313131
+echo 3131313131 
