@@ -29,4 +29,4 @@ sudo chmod a+x ~/clearOne/clearOne.sh
 sudo chmod a+x ~/clearOne/CoLinux
 sudo chmod a+x ~/clearOne/kill_ipcs.sh
 sudo chmod a+x ~/clearOne/kil_sema.sh
-sh ~/updater/tocGameUpdater.sh 
+sh ~/updater/tocGameUpdater.sh
