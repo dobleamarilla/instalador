@@ -1,4 +1,5 @@
 killall tocGame
+
 cd ~
 mkdir tocGameTemporalDownload
 cd tocGameTemporalDownload
