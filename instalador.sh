@@ -13,7 +13,7 @@ sudo apt install npm -y
 sudo npm install -g npx -y
 cd ~
 git clone --depth 1 https://github.com/dobleamarilla/instalador.git
-cd instalador
+cd /home/hit/instalador
 cp -f -r clearOne ~
 cp -f -r tocGame ~
 cp -f -r updater ~
