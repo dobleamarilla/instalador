@@ -1,4 +1,5 @@
 #!/bin/bash
+
 killall tocGame
 killall lanzadera.sh
 echo sa | sudo -S rm -rf /home/hit/tocGame/ /home/hit/updater/ /home/hit/clearOne/ /home/hit/instaladorBeta.* /home/hit/instalador.zip.* /home/hit/instalador.zip /home/hit/instaladorMaestro /home/hit/tocGameFunciona/ /home/hit/tocGameTemporal/ /home/hit/tocGameScripts/
