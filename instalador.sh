@@ -17,6 +17,7 @@ cd /home/hit/instalador
 cp -f -r clearOne ~
 cp -f -r tocGame ~
 cp -f -r updater ~
+sudo chmod a+x /home/hit/instalador/instalador.sh
 sudo cp -f inicioGnome/clearOne.desktop /etc/xdg/autostart
 sudo cp -f inicioGnome/lanzadera.desktop /etc/xdg/autostart
 sudo chmod a+x ~/tocGame/scripts/lanzadera.sh
