@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#Dependencias ESCPOS USB y ClearONE
+sudo dpkg --add-architecture i386
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 -y
+
 #NodeJS + NPM
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 source ~/.profile
@@ -9,11 +17,6 @@ nvm install 12.19.0
 killall tocGame
 killall lanzadera.sh
 echo sa | sudo -S rm -rf ~/inicioGnome/  ~/tocGame/ ~/updater/ ~/clearOne/ ~/instaladorBeta.* ~/instalador.zip.* ~/instalador.zip ~/instalador/ ~/tocGameFunciona/ ~/tocGameTemporal/ ~/tocGameScripts/
-
-#Dependencias ESCPOS USB
-sudo apt-get install build-essential libudev-dev
-sudo dpkg --add-architecture i386
-sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 -y
 
 #Instalar GIT y descargar archivos del instalador
 sudo apt install git -y
@@ -61,4 +64,11 @@ sudo systemctl enable mongod
 
 #Limpieza
 echo sa | sudo -S rm -rf ~/instalador/ ~/instalador.sh
-reboot
+
+#Reinicio
+read -p "¿Reiniciar para finalizar la instalación? " -n 1 -r
+echo    
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    reboot
+fi
