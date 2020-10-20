@@ -8,7 +8,7 @@ echo sa | sudo -S rm -rf ~/inicioGnome/  ~/tocGame/ ~/instaladorBeta.* ~/instala
 #Descargar archivos del instalador
 cd ~
 git clone --depth 1 https://github.com/dobleamarilla/instalador.git
-
+cd instalador
 #TocGame
 wget http://silema.hiterp.com/instalador/binariosToc.zip
 unzip binariosToc.zip
