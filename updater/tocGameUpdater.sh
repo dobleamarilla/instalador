@@ -3,18 +3,11 @@
 #Acciones previsorias
 killall tocGame
 killall lanzadera.sh
-echo sa | sudo -S rm -rf ~/inicioGnome/  ~/tocGame/ ~/updater/ ~/clearOne/ ~/instaladorBeta.* ~/instalador.zip.* ~/instalador.zip ~/instalador/ ~/tocGameFunciona/ ~/tocGameTemporal/ ~/tocGameScripts/
+echo sa | sudo -S rm -rf ~/inicioGnome/  ~/tocGame/ ~/instaladorBeta.* ~/instalador.zip.* ~/instalador.zip ~/instalador/ ~/tocGameFunciona/ ~/tocGameTemporal/ ~/tocGameScripts/
 
 #Descargar archivos del instalador
 cd ~
 git clone --depth 1 https://github.com/dobleamarilla/instalador.git
-
-#ClearONE
-cd instalador
-cp -f -r clearOne ~
-
-#Updater
-cp -f -r updater ~
 
 #TocGame
 wget http://silema.hiterp.com/instalador/binariosToc.zip
