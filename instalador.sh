@@ -1,25 +1,41 @@
 #!/bin/bash
+
+#NodeJS + NPM
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+source ~/.profile
+nvm install 12.19.0
+
+#Acciones previsorias
 killall tocGame
 killall lanzadera.sh
-echo sa | sudo -S rm -rf /home/hit/inicioGnome/  /home/hit/tocGame/ /home/hit/updater/ /home/hit/clearOne/ /home/hit/instaladorBeta.* /home/hit/instalador.zip.* /home/hit/instalador.zip /home/hit/instalador/ /home/hit/tocGameFunciona/ /home/hit/tocGameTemporal/ /home/hit/tocGameScripts/
-sudo dpkg --add-architecture i386
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt-get update -y
-sudo apt-get upgrade -y
-sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 -y
-sudo apt install nodejs -y
-sudo apt install npm -y
-sudo npm install -g npx -y
+echo sa | sudo -S rm -rf ~/inicioGnome/  ~/tocGame/ ~/updater/ ~/clearOne/ ~/instaladorBeta.* ~/instalador.zip.* ~/instalador.zip ~/instalador/ ~/tocGameFunciona/ ~/tocGameTemporal/ ~/tocGameScripts/
+
+#Instalar GIT y descargar archivos del instalador
+sudo apt install git -y
 cd ~
 git clone --depth 1 https://github.com/dobleamarilla/instalador.git
-cd /home/hit/instalador
+
+#ClearONE
+cd instalador
 cp -f -r clearOne ~
-cp -f -r tocGame ~
+
+#Updater
 cp -f -r updater ~
-sudo chmod a+x /home/hit/instalador/instalador.sh
-sudo cp -f inicioGnome/clearOne.desktop /etc/xdg/autostart
-sudo cp -f inicioGnome/lanzadera.desktop /etc/xdg/autostart
+
+#TocGame
+wget http://silema.hiterp.com/instalador/binariosToc.zip
+unzip binariosToc.zip
+cp -f -r tocGame ~
+
+#Scripts tocGame
+cp -f -r tocGame/scripts ~/tocGame
+
+#Arranque automático y persistencia
+sudo cp inicioGnome/clearOne.desktop /etc/xdg/autostart
+sudo cp inicioGnome/lanzadera.desktop /etc/xdg/autostart
+
+#Permisos
+sudo chmod a+x ~/tocGame/scripts/tocGame
 sudo chmod a+x ~/tocGame/scripts/lanzadera.sh
 sudo chmod a+x ~/tocGame/scripts/permisos.sh
 sudo chmod a+x ~/tocGame/scripts/starttoc.sh
@@ -28,4 +44,16 @@ sudo chmod a+x ~/clearOne/clearOne.sh
 sudo chmod a+x ~/clearOne/CoLinux
 sudo chmod a+x ~/clearOne/kill_ipcs.sh
 sudo chmod a+x ~/clearOne/kil_sema.sh
-sh ~/updater/tocGameUpdater.sh
+
+#MongoDB
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongod
+sudo systemctl daemon-reload
+sudo systemctl enable mongod
+
+#Limpieza
+echo sa | sudo -S rm -rf ~/instalador/ ~/instalador.sh
+reboot
