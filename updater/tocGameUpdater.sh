@@ -30,5 +30,5 @@ sudo chmod a+x ~/clearOne/kil_sema.sh
 
 #Limpieza
 echo sa | sudo -S rm -rf ~/instalador/ ~/instalador.sh
-~/tocGame/./tocGame & disown
+~/tocGame/scripts/lanzadera.sh & disown
 exit
