@@ -11,7 +11,9 @@ killall lanzadera.sh
 echo sa | sudo -S rm -rf ~/inicioGnome/  ~/tocGame/ ~/updater/ ~/clearOne/ ~/instaladorBeta.* ~/instalador.zip.* ~/instalador.zip ~/instalador/ ~/tocGameFunciona/ ~/tocGameTemporal/ ~/tocGameScripts/
 
 #Dependencias ESCPOS USB
-echo sa | sudo -S apt-get install build-essential libudev-dev
+sudo apt-get install build-essential libudev-dev
+sudo dpkg --add-architecture i386
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 -y
 
 #Instalar GIT y descargar archivos del instalador
 sudo apt install git -y
