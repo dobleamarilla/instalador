@@ -1,18 +1,39 @@
-killall tocGame
+#!/bin/bash
 
+#Acciones previsorias
+killall tocGame
+killall lanzadera.sh
+echo sa | sudo -S rm -rf ~/inicioGnome/  ~/tocGame/ ~/updater/ ~/clearOne/ ~/instaladorBeta.* ~/instalador.zip.* ~/instalador.zip ~/instalador/ ~/tocGameFunciona/ ~/tocGameTemporal/ ~/tocGameScripts/
+
+#Descargar archivos del instalador
 cd ~
-mkdir tocGameTemporalDownload
-cd tocGameTemporalDownload
-git clone --depth 1 https://github.com/dobleamarilla/tocGameV2.git
-cd tocGameV2
-npm install
-npm run reparar
-npm run build:linux
-cd linuxBuild
-mv tocGame-linux-x64 tocGame
-killall tocGame
+git clone --depth 1 https://github.com/dobleamarilla/instalador.git
+
+#ClearONE
+cd instalador
+cp -f -r clearOne ~
+
+#Updater
+cp -f -r updater ~
+
+#TocGame
+wget http://silema.hiterp.com/instalador/binariosToc.zip
+unzip binariosToc.zip
 cp -f -r tocGame ~
-rm -rf ~/tocGameTemporalDownload
-cd ~/tocGame
-killall tocGame
-./tocGame
+
+#Scripts tocGame
+cp -f -r tocGame/scripts ~/tocGame
+
+#Permisos
+sudo chmod a+x ~/tocGame/scripts/lanzadera.sh
+sudo chmod a+x ~/tocGame/scripts/permisos.sh
+sudo chmod a+x ~/tocGame/scripts/starttoc.sh
+sudo chmod a+x ~/updater/tocGameUpdater.sh
+sudo chmod a+x ~/clearOne/clearOne.sh
+sudo chmod a+x ~/clearOne/CoLinux
+sudo chmod a+x ~/clearOne/kill_ipcs.sh
+sudo chmod a+x ~/clearOne/kil_sema.sh
+
+#Limpieza
+echo sa | sudo -S rm -rf ~/instalador/ ~/instalador.sh
+~/tocGame/tocGame
