@@ -35,7 +35,7 @@ sudo cp inicioGnome/clearOne.desktop /etc/xdg/autostart
 sudo cp inicioGnome/lanzadera.desktop /etc/xdg/autostart
 
 #Permisos
-sudo chmod a+x ~/tocGame/scripts/tocGame
+sudo chmod a+x ~/tocGame/tocGame
 sudo chmod a+x ~/tocGame/scripts/lanzadera.sh
 sudo chmod a+x ~/tocGame/scripts/permisos.sh
 sudo chmod a+x ~/tocGame/scripts/starttoc.sh
