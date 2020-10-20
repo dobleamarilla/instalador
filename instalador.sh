@@ -66,9 +66,4 @@ sudo systemctl enable mongod
 echo sa | sudo -S rm -rf ~/instalador/ ~/instalador.sh
 
 #Reinicio
-read -p "¿Reiniciar para finalizar la instalación? " -n 1 -r
-echo    
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    reboot
-fi
+reboot
