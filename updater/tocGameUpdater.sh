@@ -25,6 +25,7 @@ cp -f -r tocGame ~
 cp -f -r tocGame/scripts ~/tocGame
 
 #Permisos
+sudo chmod a+x ~/tocGame/scripts/tocGame
 sudo chmod a+x ~/tocGame/scripts/lanzadera.sh
 sudo chmod a+x ~/tocGame/scripts/permisos.sh
 sudo chmod a+x ~/tocGame/scripts/starttoc.sh
