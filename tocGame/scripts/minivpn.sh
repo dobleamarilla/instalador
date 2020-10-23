@@ -26,5 +26,6 @@ sudo apt install iptables-persistent
 sudo netfilter-persistent save
 sudo nano /etc/gdm3/custom.conf
 sudo nano /etc/ssh/sshd_config
+rm -rf ~/temporalVPN
 clear
 echo "Recuerda cambiar el certificado y la key en /etc/openvpn/client/ (REQUIERE REINICIO)"
