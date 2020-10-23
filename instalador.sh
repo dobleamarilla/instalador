@@ -47,6 +47,7 @@ sudo chmod a+x ~/tocGame/tocGame
 sudo chmod a+x ~/tocGame/scripts/lanzadera.sh
 sudo chmod a+x ~/tocGame/scripts/permisos.sh
 sudo chmod a+x ~/tocGame/scripts/starttoc.sh
+sudo chmod a+x ~/tocGame/scripts/minivpn.sh
 sudo chmod a+x ~/updater/tocGameUpdater.sh
 sudo chmod a+x ~/clearOne/clearOne.sh
 sudo chmod a+x ~/clearOne/CoLinux
