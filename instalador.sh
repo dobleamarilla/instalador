@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Cerrar ClearOne si estuviese instalado
-sh ~/clearOne.sh
+sh ~/clearOne/clearOne.sh
 
 #Dependencias ESCPOS USB y ClearONE
 sudo dpkg --add-architecture i386
